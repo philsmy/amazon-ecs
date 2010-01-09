@@ -6,9 +6,9 @@ require 'rake/packagetask'
 
 spec = Gem::Specification.new do |s| 
   s.name = "amazon-ecs"
-  s.version = "0.5.7"
-  s.author = "Herryanto Siatono"
-  s.email = "herryanto@pluitsolutions.com"
+  s.version = "0.5.8"
+  s.author = "Phil Smy"
+  s.email = "phil.smy@filmamora.com"
   s.homepage = "http://amazon-ecs.rubyforge.net/"
   s.platform = Gem::Platform::RUBY
   s.summary = "Generic Amazon E-commerce Service (ECS) REST API. Supports ECS 4.0."

@@ -59,7 +59,7 @@ module Amazon
     
     # Set default search options
     def self.options=(opts)
-      @@options = opts
+      @@options = opts.merge(@@options)
     end
     
     # Get debug flag.
@@ -77,11 +77,11 @@ module Amazon
       yield @@options
     end
     
-    # Search amazon items with search terms. Default search index option is 'Books'.
+    # Search amazon items with search terms. Default search index option is 'DVD'.
     # For other search type other than keywords, please specify :type => [search type param name].
     def self.item_search(terms, opts = {})
       opts[:operation] = 'ItemSearch'
-      opts[:search_index] = opts[:search_index] || 'Books'
+      opts[:search_index] = opts[:search_index] || 'DVD'
       
       type = opts.delete(:type)
       if type 
@@ -99,7 +99,15 @@ module Amazon
       opts[:item_id] = item_id
       
       self.send_request(opts)
-    end    
+    end
+    
+    # find similar items
+    def self.similarity_lookup(item_id, opts = {})
+      opts[:operation] = 'SimilarityLookup'
+      opts[:item_id] = item_id
+      
+      self.send_request(opts)
+    end
           
     # Generic send request to ECS REST service. You have to specify the :operation parameter.
     def self.send_request(opts)
