@@ -108,6 +108,14 @@ module Amazon
       
       self.send_request(opts)
     end
+    
+    def self.browse_node_lookup(node_id, opts = {})
+      opts[:operation] = 'BrowseNodeLookup'
+      opts[:browse_node_id] = node_id
+      opts[:response_group] = opts[:response_group] || 'BrowseNodeInfo'
+      
+      self.send_request(opts)
+    end
           
     # Generic send request to ECS REST service. You have to specify the :operation parameter.
     def self.send_request(opts)
