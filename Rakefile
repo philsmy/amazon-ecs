@@ -19,7 +19,7 @@ spec = Gem::Specification.new do |s|
   s.has_rdoc = true
   s.extra_rdoc_files = ["README", "CHANGELOG"]
   s.add_dependency("hpricot", ">= 0.4")
-  s.add_dependency("ruby-hmac", ">= 0.3.2")
+  s.add_dependency("ruby-hmac", ">= 0.4.0")
 end
  
 Rake::GemPackageTask.new(spec) do |pkg| 
