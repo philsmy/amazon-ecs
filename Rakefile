@@ -6,10 +6,17 @@ require 'rake/packagetask'
 
 spec = Gem::Specification.new do |s| 
   s.name = "amazon-ecs"
+<<<<<<< HEAD
   s.author = "Phil Smy"
   s.email = "phil.smy@filmamora.com"
   s.version = "1.0.0"
   s.homepage = "https://github.com/philsmy/amazon-ecs"
+=======
+  s.version = "1.1.0"
+  s.author = "Herryanto Siatono"
+  s.email = "herryanto@gmail.com"
+  s.homepage = "https://github.com/jugend/amazon-ecs"
+>>>>>>> 052858dda002dc5d4c3175808df20b1579f71e55
   s.platform = Gem::Platform::RUBY
   s.summary = "Generic Amazon Product Advertising Ruby API"
   s.files = FileList["{bin,lib}/**/*"].to_a
